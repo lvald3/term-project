@@ -1,0 +1,37 @@
+#menu {
+    width: 60%;
+    float: right;
+    justify-content: flex-end;  
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; 
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li a {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #333;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: lightslategray;
+}
+
+/*Constant Footer*/
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: lightgrey;
+}
+
+#copyright {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: large;
+    text-align: center;
+}
