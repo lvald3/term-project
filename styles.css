@@ -1,5 +1,5 @@
 #menu {
-    width: 60%;
+    width: 80%;
     float: right;
     justify-content: flex-end;  
 }
@@ -19,13 +19,13 @@
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: lightslategray;
+    color: darkgreen;
 }
 
 /*Constant Footer*/
 footer {
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     background-color: lightgrey;
 }
 

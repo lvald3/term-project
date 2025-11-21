@@ -1,19 +1,31 @@
 // List of image URLs
-const images = [
-    "image1.jpg",
-    "image2.jpg",
-    "image3.jpg"
-];
+window.onload = function () {
+    const images = [
+        "images/logo.png",
+        "images/AmberCanyon.png",
+        "images/ACBottle.png",
+        "images/MidnightGrove.png",
+        "images/MGBottle.png",
+        "images/SolarCitrus.png",
+        "images/SCBottle.png",
+        "images/RainforestMist.png",
+        "images/RMBottle.png",
+        "images/EBCap.png",
+        "images/totebag.png"
+    ];
 
-let index = 0;
+    let index = 0;
+    const slide = document.getElementById("slideshow");
 
-function changeImage() {
-    index++;
-    if (index >= images.length) {
-        index = 0; // restart at first image
+    function changeImage() {
+        index++;
+        if (index >= images.length) {
+            index = 0;
+        }
+        slide.src = images[index];
     }
-    document.getElementById("slideshow").src = images[index];
-}
 
-// Change image every 5 seconds (5000 ms)
-setInterval(changeImage, 5000);
+    // Change every 5 seconds
+    setInterval(changeImage, 5000);
+};
+
