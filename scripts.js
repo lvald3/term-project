@@ -1,4 +1,4 @@
-// List of image URLs
+//Automatic Slideshow
 window.onload = function () {
     const images = [
         "images/logo.png",

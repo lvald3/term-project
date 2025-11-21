@@ -1,3 +1,9 @@
+#storeName {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkgreen;
+}
+
 #menu {
     width: 80%;
     float: right;
@@ -22,11 +28,25 @@
     color: darkgreen;
 }
 
+#introCitrus {
+    float: center;
+}
+
+#seasonal {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: burlywood;
+}
+
+#promo {
+    float: center;
+}
+
 /*Constant Footer*/
 footer {
     text-align: center;
     padding: 3px;
-    background-color: lightgrey;
+    background-color: beige;
 }
 
 #copyright {
