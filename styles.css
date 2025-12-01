@@ -1,376 +1,379 @@
-/* =========================
-   Base / Reset
-   ========================= */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background-color: #f6f7f2;
-}
-
-/* Layout wrapper for main content */
-main {
-    max-width: 1100px;
-    margin: 0 auto 3rem auto;
-    padding: 0 1.5rem;
-}
-
-/* =========================
-   Header & Navigation
-   ========================= */
-header {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.25rem 1.5rem 0.75rem 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo area */
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.logo-img {
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
-}
-
-.brand-name {
-    letter-spacing: 0.25em;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-/* Nav – supports both .main-nav and #menu */
-.main-nav,
-#menu {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-#menu ul {
-    list-style: none;
-    display: flex;
-    gap: 0.75rem;
-}
-
-#menu li {
-    list-style: none;
-}
-
-/* Nav links – shared style */
-.nav-link,
-.main-nav a,
-#menu a,
-.hero-button-bar .btn {
-    text-decoration: none;
-    border: 1px solid #386a3b;
-    background-color: #ffffff;
-    padding: 0.4rem 0.9rem;
-    border-radius: 4px;
-    color: #1b3b1d;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
-}
-
-.nav-link:hover,
-.main-nav a:hover,
-#menu a:hover,
-.hero-button-bar .btn:hover {
-    background-color: #386a3b;
-    color: #ffffff;
-    transform: translateY(-1px);
-}
-
-/* Active link */
-.nav-link.active,
-.main-nav a.active,
-#menu a.active {
-    background-color: #386a3b;
-    color: #ffffff;
-}
-
-/* Slideshow image on home page */
-#slideshow {
-    margin-left: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-
-/* =========================
-   Hero (Products page)
-   ========================= */
-.hero {
-    max-width: 1100px;
-    margin: 1rem auto 2rem auto;
-    padding: 0 1.5rem;
-}
-
-.hero-image-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-}
-
-.hero-image-wrapper img,
-#hero-image {
-    max-width: 280px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.18);
-}
-
-.hero-button-bar {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Generic buttons */
-.btn {
-    cursor: pointer;
-}
-
-.primary-btn {
-    background-color: #386a3b;
-    color: #ffffff;
-}
-
-/* =========================
-   Content / Typography
-   ========================= */
-.content {
-    background-color: #ffffff;
-    padding: 2rem 2rem 2.5rem 2rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
-    margin-top: 1rem;
-}
-
-.content h1 {
-    font-size: 1.9rem;
-    margin-bottom: 1rem;
-}
-
-.content h2 {
-    font-size: 1.35rem;
-    margin: 2rem 0 0.75rem;
-}
-
-.lead,
-.mission {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-/* =========================
-   Promo grid (Home page)
-   ========================= */
-.promo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-}
-
-.promo-card {
-    background-color: #faf8f4;
-    border-radius: 16px;
-    padding: 1.25rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-.promo-card img {
-    width: 100%;
-    max-height: 140px;
-    object-fit: contain;
-    margin-bottom: 0.75rem;
-}
-
-.promo-card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-}
-
-/* =========================
-   Product grid (Products page)
-   ========================= */
-.storefront h1 {
-    margin-bottom: 0.4rem;
-}
-
-.storefront .lead {
-    margin-bottom: 1.2rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1.2rem;
-    margin-top: 0.75rem;
-}
-
-/* Individual product card */
-.product-card {
-    background-color: #faf8f4;
-    border-radius: 16px;
-    padding: 1rem 1rem 1.2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.product-thumb {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 0.6rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-
-.product-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.25rem;
-}
-
-.product-card .small-text {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.35rem;
-}
-
-.product-card .price {
-    font-weight: 600;
-    color: #2d5b31;
-}
-
-/* =========================
-   Table / Database view
-   ========================= */
-.table-wrapper {
-    overflow-x: auto;
-    margin-top: 0.75rem;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-    background-color: #fafafa;
-}
-
-thead {
-    background-color: #e1e8dd;
-}
-
-th,
-td {
-    padding: 0.45rem 0.6rem;
-    border-bottom: 1px solid #d9ddcf;
-    text-align: left;
-}
-
-th.right,
-td.right {
-    text-align: right;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f3f6ef;
-}
-
-/* =========================
-   Product Form
-   ========================= */
-.product-form {
-    margin-top: 0.75rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.75rem 1.25rem;
-    align-items: end;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="number"] {
-    padding: 0.3rem 0.45rem;
-    border-radius: 4px;
-    border: 1px solid #c7cfc2;
-    font-size: 0.95rem;
-}
-
-input:focus {
-    outline: 2px solid #386a3b;
-    outline-offset: 1px;
-}
-
-.form-note {
-    grid-column: 1 / -1;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* =========================
-   Footer
-   ========================= */
-footer {
-    background-color: #f0e1c9;
-    padding: 1rem 1.5rem 1.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-    border-top: 1px solid #ddc8a5;
-}
-
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
-    }
-
-    #slideshow {
-        margin-left: 0;
-        margin-top: 0.75rem;
-    }
-
-    .content {
-        padding: 1.5rem 1.25rem 2rem;
+//Hours Page Script
+function setCurrentYear() {
+    const span = document.getElementById("year");
+    if (span) {
+        span.textContent = new Date().getFullYear();
     }
 }
+
+//Automatic Slideshow
+function initSlideshow() {
+    const slideshowImg = document.getElementById("slideshow");
+    const heroImg = document.getElementById("hero-image");
+
+    if (slideshowImg) {
+        const homeImages = [
+            {
+                src: "images/SCPromo.png",
+                alt: "Introducing Solar Citrus promotional image"
+            },
+            {
+                src: "images/Collection.png",
+                alt: "EarthBar Holiday Collection with free tote bag"
+            },
+            {
+                src: "images/totebag.png",
+                alt: "EarthBar canvas tote bag"
+            },
+            {
+                scr: "images/AmberCanyon.png",
+                alt: "Amber Canyon bar soap"
+            },
+            {
+                scr: "images/MidnightGrove.png",
+                alt: "Midnight Grove bar soap"
+            },
+            {
+                scr: "images/RainforestMist.png",
+                alt: "Rainforest Mist bar soap"
+            },
+            {
+                scr: "images/SolarCitrus.png",
+                alt: "Solar Citrus bar soap"
+            },
+            {
+                scr: "images/ACBottle.png",
+                alt: "Amber Canyon body wash bottle"
+            },
+            {               
+                scr: "images/MGBottle.png",
+                alt: "Midnight Grove body wash bottle"
+            },
+            {
+                scr: "images/RMBottle.png",
+                alt: "Rainforest Mist body wash bottle"
+            },
+            {
+                scr: "images/SCBottle.png",
+                alt: "Solar Citrus body wash bottle"
+            },
+            {
+                scr: "images/totebag.png",
+                alt: "EarthBar canvas tote bag"
+            }
+        ];
+
+        let index = 0;
+
+        const swapImage = () => {
+            const item = homeImages[index];
+            slideshowImg.src = item.src;
+            slideshowImg.alt = item.alt;
+            index = (index + 1) % homeImages.length;
+        };
+
+        swapImage();
+        setInterval(swapImage, 5000);
+    }
+
+    if (heroImg && heroImg.dataset.page === "products") {
+        const heroImages = [
+            { src: "images/RMBottle.png", alt: "Rainforest Mist body wash bottle" },
+            { src: "images/MGBottle.png", alt: "Midnight Grove body wash bottle" },
+            { src: "images/SCBottle.png", alt: "Solar Citrus body wash bottle" }
+        ];
+
+        let idx = 0;
+
+        const rotateHero = () => {
+            const item = heroImages[idx];
+            heroImg.src = item.src;
+            heroImg.alt = item.alt;
+            idx = (idx + 1) % heroImages.length;
+        };
+
+        rotateHero();
+        setInterval(rotateHero, 4000);
+    }
+}
+
+//Hourse section of javascript 
+
+    //The store and customer service hours
+};
+const StoreHours = {
+    0: null,
+    1: [10, 18],
+    2: [10, 18],
+    3: [10, 18],
+    4: [10, 18],
+    5: [10, 18],
+    6: [11, 17],
+};
+
+    //The pickup hours
+const pickupHours = {
+    0: null,
+    1: [11, 17],
+    2: [11, 17],
+    3: [11, 17],
+    4: [11, 17],
+    5: [11, 17],
+    6: [13, 16],
+};
+
+    //formats the 24hour number into the regular hours with AM and PM
+function HourFormat(h) {
+        const period = h >=12 ? "PM" : "AM";
+        const hour12 = h % 12 === 0 ? 12 : h % 12;
+        return `${hour12}:00 ${period}`;
+    }
+
+    //Function for the store and customer service status
+function updateStoreStatus() {
+    const textTodayHours = document.getElementById("store-today-hours");
+    const Hourstatus = document.getElementById("store-open-status");
+    if (!Hourstatus || !textTodayHours) return;
+
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    const TodayHours = StoreHours[day];
+
+    if (!TodayHours) {
+        Hourstatus.textContent = "The Store and Cuostomer service is Closed today!"
+        textTodayHours.textContent = "Today: Closed";
+        return;
+    }
+
+    const Storeopen = TodayHours[0];
+    const Storeclose = TodayHours[1];
+
+    textTodayHours.textContent = `Todays Store and Customer service Hours: ${HourFormat(Storeopen)} - ${HourFormat(Storeclose)}`;
+
+    if (hour >= Storeopen && hour < Storeclose) {
+        Hourstatus.textContent = "The Stores and Customer service is OPEN right now!"
+    } else{
+        Hourstatus.textContent = "The Stores and Customer service is CLOSED right now!"
+    }
+}
+
+    //function for the stores pickup status
+function updatePickupStatus() {
+    const textPickupTodayHours = document.getElementById("pickup-today-hours");
+    const Pickupstatus = document.getElementById("pickup-open-status");
+    if (!Pickupstatus || !textPickupTodayHours) return;
+
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    const TodayHours = pickupHours[day];
+
+
+    if (!TodayHours) {
+        Pickupstatus.textContent = "The Stores Pick-Up is Closed today!"
+        textPickupTodayHours.textContent = "Today: Closed";
+        return;
+    }
+
+    const Storeopen = TodayHours[0];
+    const Storeclose = TodayHours[1];
+
+    textPickupTodayHours.textContent = `Todays Pick-Up Hours: ${HourFormat(Storeopen)} - ${HourFormat(Storeclose)}`;
+
+    if (hour >= Storeopen && hour < Storeclose) {
+        Pickupstatus.textContent = "The Stores Pick-Up is OPEN right now!"
+    } else{
+        Pickupstatus.textContent = "The Stores Pick-Up is CLOSED right now!"
+    }
+};
+
+//Products Page Data
+const products = [
+    //Bar Soaps
+    {
+        sku: "EB-AC-BAR",
+        name: "Amber Canyon Bar",
+        category: "Bar",
+        type: "Amber Canyon",
+        price: 8.99,
+        image: "images/AmberCanyon.png"
+    },
+    {
+        sku: "EB-MG-BAR",
+        name: "Midnight Grove Bar",
+        category: "Bar",
+        type: "Midnight Grove", 
+        price: 8.99,
+        image: "images/MidnightGrove.png"
+    },
+    {
+        sku: "EB-RM-BAR",
+        name: "Rainforest Mist Bar",
+        category: "Bar",
+        type: "Rainforest Mist",
+        price: 8.99,
+        image: "images/RainforestMist.png"
+    },
+    {
+        sku: "EB-SC-BAR",
+        name: "Solar Citrus Bar",
+        category: "Bar",
+        type: "Solar Citrus",
+        price: 8.99,
+        image: "images/SolarCitrus.png"
+    },
+
+    //Liquid Soap
+    {
+        sku: "EB-AC-BOTTLE",
+        name: "Amber Canyon Body Wash",
+        category: "Bottle",
+        type: "Amber Canyon",
+        price: 14.99,
+        image: "images/ACBottle.png"
+    },
+    {
+        sku: "EB-MG-BOTTLE",
+        name: "Midnight Grove Body Wash",
+        category: "Bottle",
+        type: "Midnight Grove",
+        price: 14.99,
+        image: "images/MGBottle.png"
+    },
+    {
+        sku: "EB-RM-BOTTLE",
+        name: "Rainforest Mist Body Wash",
+        category: "Bottle",
+        type: "Rainforest Mist",
+        price: 14.99,
+        image: "images/RMBottle.png"
+    },
+    {
+        sku: "EB-SC-BOTTLE",
+        name: "Solar Citrus Body Wash",
+        category: "Bottle",
+        type: "Solar Citrus",
+        price: 14.99,
+        image: "images/SCBottle.png"
+    },
+
+    //Accessory
+    {
+        sku: "EB-TOTE",
+        name: "EarthBar Canvas Tote",
+        category: "Accessory",
+        type: "Tote Bag",
+        price: 11.99,
+        image: "images/totebag.png"
+    },
+    {
+        sku: "EB-HAT",
+        name: "EarthBar Hat",
+        category: "Accessory",
+        type: "Hat",
+        price: 14.99,
+        image: "images/EBCap.png"
+
+    }
+];
+
+//Product Grid
+function renderProductGrid() {
+    const grid = document.getElementById("product-grid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    products.forEach((p) => {
+        const card = document.createElement("article");
+        card.classList.add("product-card");
+
+        const imgSrc = p.image || "images/logo.png";
+
+        card.innerHTML = `
+            <img class="product-thumb" src="${imgSrc}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p class="small-text">${p.category} • ${p.type}</p>
+            <p class="price">$${p.price.toFixed(2)}</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+//Product Table View
+function renderProductTable() {
+    const tableBody = document.querySelector("#product-table tbody");
+    if (!tableBody) return;
+
+    tableBody.innerHTML = "";
+
+    products.forEach((p) => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${p.sku}</td>
+            <td>${p.name}</td>
+            <td>${p.category}</td>
+            <td>${p.type}</td>
+            <td class="right">$${p.price.toFixed(2)}</td>
+        `;
+
+        tableBody.appendChild(tr);
+    });
+}
+
+//Product Form Logic
+function initProductForm() {
+    const form = document.getElementById("product-form");
+    if (!form) return;
+
+    form.addEventListener("submit", (evt) => {
+        evt.preventDefault();
+
+        const sku = document.getElementById("sku").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const category = document.getElementById("category").value.trim();
+        const type = document.getElementById("type").value.trim();
+        const priceValue = document.getElementById("price").value;
+
+        if (!sku || !name || !category || priceValue === "") {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        const price = Number(priceValue);
+        if (isNaN(price) || price < 0) {
+            alert("Please enter a valid price.");
+            return;
+        }
+
+        const newProduct = {
+            sku,
+            name,
+            category,
+            type: type || "Custom",
+            price,
+            image: "images/logo.png"
+        };
+
+        products.push(newProduct);
+
+        renderProductGrid();
+        renderProductTable();
+
+        form.reset();
+    });
+}
+
+// Initialize on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    setCurrentYear();
+    initSlideshow();
+    updateOpenStatus();
+    updatePickupStatus();
+    renderProductGrid();
+    renderProductTable();
+    initProductForm();
+});
