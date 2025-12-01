@@ -1,48 +1,52 @@
 <!-- Leandro Valdes Products Page -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>EarthBar | Products</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang = "en">
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+<head>
+    <meta charset = "UTF-8">
+    <title>EarthBar | Products </title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+    <link rel = "stylesheet" href = "styles.css">
+    <script src = "scripts.js" defer></script>
 </head>
 <body>
-    <!-- =============== Header =============== -->
+    <!-- Header -->
     <header>
-        <div class="logo-area">
-            <img src="logo.png" alt="EarthBar Logo" class="logo-img">
-            <span class="brand-name">EARTHBAR</span>
+        <div class = "logo-area">
+            <img src = "images/logo.png" alt = "EarthBar Logo" class = "logo-img">
+            <span class = "brand-name"> EARTHBAR </span>
         </div>
 
         <nav class="main-nav">
-            <a href="home.html" class="nav-link">Home</a>
-            <a href="products.html" class="nav-link active">Products</a>
+            <a href="home.html" class="nav-link active">Home</a>
+            <a href="aboutus.html" class="nav-link">About Us</a>
+            <a href="products.html" class="nav-link">Products</a>
             <a href="hours.html" class="nav-link">Hours</a>
+            <a href="reservations.html" class="nav-link">Reservations</a>
+            <a href="contactus.html" class="nav-link">Contact Us</a>
         </nav>
     </header>
 
-    <!-- ============== Main Content ============== -->
+    <!-- Main Content -->
     <main>
         <!-- HERO / SLIDESHOW -->
-        <section class="hero">
-            <div class="hero-image-wrapper">
+        <section class = "hero">
+            <div class = "hero-image-wrapper">
                 <img
-                    id="hero-image"
+                    id = "hero-image"
                     data-page="products"
-                    src="RMBottle.png"
-                    alt="EarthBar product gallery"
+                    src = "images/RMBottle.png"
+                    alt = "EarthBar product gallery"
                 >
             </div>
         </section>
 
         <!-- STORE FRONT GRID / MAIN PRODUCTS SECTION -->
-        <section class="content storefront">
+        <section class = "content storefront">
             <h1>Shop EarthBar</h1>
 
-            <p class="lead">
+            <p class = "lead">
                 Choose from our signature bar soaps, luxurious body wash bottles,
                 and eco-friendly EarthBar accessories.
             </p>
@@ -55,9 +59,9 @@
             <!-- Table database view -->
             <h2>Full Product List</h2>
 
-            <div class="table-wrapper">
-                <table id="product-table">
-                    <caption class="table-caption">
+            <div class = "table-wrapper">
+                <table id = "product-table">
+                    <caption class = "table-caption">
                         The table below shows the same catalog in a structured format and
                         serves as our “database view” for this demo.
                     </caption>
@@ -67,7 +71,7 @@
                             <th>Product</th>
                             <th>Category</th>
                             <th>Type</th>
-                            <th class="right">Price</th>
+                            <th class = "right">Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,47 +89,47 @@
                 then rendered in both the grid and the table above.
             </p>
 
-            <form id="product-form" class="product-form">
-                <div class="form-row">
-                    <label for="sku">SKU</label>
-                    <input type="text" id="sku" name="sku" placeholder="e.g., EB-AC-BAR" required>
+            <form id = "product-form" class = "product-form" action = "connect.php" method = "POST">
+                <div class = "form-row">
+                    <label for = "sku">SKU</label>
+                    <input type = "text" id = "sku" name = "sku" placeholder = "e.g., EB-AC-BAR" required>
                 </div>
 
-                <div class="form-row">
-                    <label for="name">Product Name</label>
-                    <input type="text" id="name" name="name" placeholder="Product name" required>
+                <div class = "form-row">
+                    <label for = "name">Product Name</label>
+                    <input type = "text" id = "name" name = "name" placeholder = "Product name" required>
                 </div>
 
-                <div class="form-row">
-                    <label for="category">Category</label>
-                    <input type="text" id="category" name="category" placeholder="Bar, Bottle, Accessory" required>
+                <div class = "form-row">
+                    <label fo = "category">Category</label>
+                    <input type = "text" id = "category" name = "category" placeholder="Bar, Bottle, Accessory" required>
                 </div>
 
-                <div class="form-row">
-                    <label for="type">Type / Scent</label>
-                    <input type="text" id="type" name="type" placeholder="e.g., Amber Canyon">
+                <div class = "form-row">
+                    <label for = "type">Type / Scent</label>
+                    <input type = "text" id = "type" name = "type" placeholder = "e.g., Amber Canyon">
                 </div>
 
-                <div class="form-row">
-                    <label for="price">Price ($)</label>
-                    <input type="number" step="0.01" id="price" name="price" required>
+                <div class = "form-row">
+                    <label for = "price">Price ($)</label>
+                    <input type = "number" step="0.01" id = "price" name = "price" required>
                 </div>
 
-                <button type="submit" class="btn primary-btn">
+                <button type = "submit" class = "btn primary-btn">
                     Add Product
                 </button>
 
-                <p class="form-note">
+                <p class = "form-note">
                     New products will appear in both the grid and table above.
                 </p>
             </form>
         </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer>
         <p>
-            &copy; <span id="year"></span> EarthBar Natural Soap. All rights reserved.
+            &copy; <span id = "year"></span> EarthBar Natural Soap. All rights reserved.
         </p>
         <p>
             EarthBar Studio • 123 Amber Canyon Way • Tallahassee, FL 32301 • (850) 555-0134
@@ -133,4 +137,3 @@
     </footer>
 </body>
 </html>
-
