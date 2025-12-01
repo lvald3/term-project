@@ -57,7 +57,11 @@ function initSlideshow() {
             { src: "SCBottle.png", alt: "Solar Citrus body wash bottle" },
             { src: "ACBottle.png", alt: "Amber Canyon body wash bottle" },
             { src: "RainforestMist.png", alt: "Rainforest Mist Bar" },
-            { src: "MidnightGrove.png", alt: "Midnight 
+            { src: "MidnightGrove.png", alt: "Midnight Grove Bar" },
+            { src: "SolarCitrus.png", alt: "Solar Citrus Bar" },
+            { src: "AmberCanyon.png", alt: "Amber Canyon Bar" },
+            { src: "totebag.png", alt: "Tote Bag" },
+            { src: "EBCap.png", alt: "Earth Bar Cap" }
         ];
 
         let idx = 0;
