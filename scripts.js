@@ -46,15 +46,18 @@ function initSlideshow() {
         };
 
         swapImage();
-        setInterval(swapImage, 3500);
+        setInterval(swapImage, 5000);
     }
 
-    // Products page hero – rotate body-wash bottles
+    // Products page hero – rotate products
     if (heroImg && heroImg.dataset.page === "products") {
         const heroImages = [
             { src: "RMBottle.png", alt: "Rainforest Mist body wash bottle" },
             { src: "MGBottle.png", alt: "Midnight Grove body wash bottle" },
-            { src: "SCBottle.png", alt: "Solar Citrus body wash bottle" }
+            { src: "SCBottle.png", alt: "Solar Citrus body wash bottle" },
+            { src: "ACBottle.png", alt: "Amber Canyon body wash bottle" },
+            { src: "RainforestMist.png", alt: "Rainforest Mist Bar" },
+            { src: "MidnightGrove.png", alt: "Midnight 
         ];
 
         let idx = 0;
@@ -67,7 +70,7 @@ function initSlideshow() {
         };
 
         rotateHero();
-        setInterval(rotateHero, 4000);
+        setInterval(rotateHero, 5000);
     }
 }
 
