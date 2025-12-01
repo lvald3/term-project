@@ -1,135 +1,376 @@
-<!-- Leandro Valdes Products Page -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>EarthBar | Products</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================
+   Base / Reset
+   ========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-</head>
-<body>
-    <!-- =============== Header =============== -->
-    <header>
-        <div class="logo-area">
-            <img src="logo.png" alt="EarthBar Logo" class="logo-img">
-            <span class="brand-name">EARTHBAR</span>
-        </div>
+html, body {
+    height: 100%;
+}
 
-        <nav class="main-nav">
-            <a href="home.html" class="nav-link">Home</a>
-            <a href="products.html" class="nav-link active">Products</a>
-            <a href="hours.html" class="nav-link">Hours</a>
-        </nav>
-    </header>
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f6f7f2;
+}
 
-    <!-- ============== Main Content ============== -->
-    <main>
-        <!-- HERO / SLIDESHOW -->
-        <section class="hero">
-            <div class="hero-image-wrapper">
-                <img
-                    id="hero-image"
-                    data-page="products"
-                    src="RMBottle.png"
-                    alt="EarthBar product gallery"
-                >
-            </div>
-        </section>
+/* Layout wrapper for main content */
+main {
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1.5rem;
+}
 
-        <!-- STORE FRONT GRID / MAIN PRODUCTS SECTION -->
-        <section class="content storefront">
-            <h1>Shop EarthBar</h1>
+/* =========================
+   Header & Navigation
+   ========================= */
+header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 
-            <p class="lead">
-                Choose from our signature bar soaps, luxurious body wash bottles,
-                and eco-friendly EarthBar accessories.
-            </p>
+/* Logo area */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-            <!-- Product cards grid (filled through scripts.js) -->
-            <div id="product-grid" class="product-grid">
-                <!-- JS inserts product cards here -->
-            </div>
+.logo-img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
 
-            <!-- Table database view -->
-            <h2>Full Product List</h2>
+.brand-name {
+    letter-spacing: 0.25em;
+    font-size: 1rem;
+    font-weight: 600;
+}
 
-            <div class="table-wrapper">
-                <table id="product-table">
-                    <caption class="table-caption">
-                        The table below shows the same catalog in a structured format and
-                        serves as our “database view” for this demo.
-                    </caption>
-                    <thead>
-                        <tr>
-                            <th>SKU</th>
-                            <th>Product</th>
-                            <th>Category</th>
-                            <th>Type</th>
-                            <th class="right">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- rows inserted dynamically -->
-                    </tbody>
-                </table>
-            </div>
+/* Nav – supports both .main-nav and #menu */
+.main-nav,
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-            <!-- FORM: ADD A NEW PRODUCT -->
-            <h2>Add a New Product</h2>
+#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+}
 
-            <p>
-                Use this form to insert a new product into the store catalog.
-                Items are stored in your browser (simulating a database),
-                then rendered in both the grid and the table above.
-            </p>
+#menu li {
+    list-style: none;
+}
 
-            <form id="product-form" class="product-form">
-                <div class="form-row">
-                    <label for="sku">SKU</label>
-                    <input type="text" id="sku" name="sku" placeholder="e.g., EB-AC-BAR" required>
-                </div>
+/* Nav links – shared style */
+.nav-link,
+.main-nav a,
+#menu a,
+.hero-button-bar .btn {
+    text-decoration: none;
+    border: 1px solid #386a3b;
+    background-color: #ffffff;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    color: #1b3b1d;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
 
-                <div class="form-row">
-                    <label for="name">Product Name</label>
-                    <input type="text" id="name" name="name" placeholder="Product name" required>
-                </div>
+.nav-link:hover,
+.main-nav a:hover,
+#menu a:hover,
+.hero-button-bar .btn:hover {
+    background-color: #386a3b;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
 
-                <div class="form-row">
-                    <label for="category">Category</label>
-                    <input type="text" id="category" name="category" placeholder="Bar, Bottle, Accessory" required>
-                </div>
+/* Active link */
+.nav-link.active,
+.main-nav a.active,
+#menu a.active {
+    background-color: #386a3b;
+    color: #ffffff;
+}
 
-                <div class="form-row">
-                    <label for="type">Type / Scent</label>
-                    <input type="text" id="type" name="type" placeholder="e.g., Amber Canyon">
-                </div>
+/* Slideshow image on home page */
+#slideshow {
+    margin-left: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
 
-                <div class="form-row">
-                    <label for="price">Price ($)</label>
-                    <input type="number" step="0.01" id="price" name="price" required>
-                </div>
+/* =========================
+   Hero (Products page)
+   ========================= */
+.hero {
+    max-width: 1100px;
+    margin: 1rem auto 2rem auto;
+    padding: 0 1.5rem;
+}
 
-                <button type="submit" class="btn primary-btn">
-                    Add Product
-                </button>
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
 
-                <p class="form-note">
-                    New products will appear in both the grid and table above.
-                </p>
-            </form>
-        </section>
-    </main>
+.hero-image-wrapper img,
+#hero-image {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.18);
+}
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <p>
-            &copy; <span id="year"></span> EarthBar Natural Soap. All rights reserved.
-        </p>
-        <p>
-            EarthBar Studio • 123 Amber Canyon Way • Tallahassee, FL 32301 • (850) 555-0134
-        </p>
-    </footer>
-</body>
-</html>
+.hero-button-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Generic buttons */
+.btn {
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #386a3b;
+    color: #ffffff;
+}
+
+/* =========================
+   Content / Typography
+   ========================= */
+.content {
+    background-color: #ffffff;
+    padding: 2rem 2rem 2.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    margin-top: 1rem;
+}
+
+.content h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.content h2 {
+    font-size: 1.35rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.lead,
+.mission {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   Promo grid (Home page)
+   ========================= */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.promo-card {
+    background-color: #faf8f4;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.promo-card img {
+    width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+}
+
+.promo-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+/* =========================
+   Product grid (Products page)
+   ========================= */
+.storefront h1 {
+    margin-bottom: 0.4rem;
+}
+
+.storefront .lead {
+    margin-bottom: 1.2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.2rem;
+    margin-top: 0.75rem;
+}
+
+/* Individual product card */
+.product-card {
+    background-color: #faf8f4;
+    border-radius: 16px;
+    padding: 1rem 1rem 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-thumb {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.product-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-card .small-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.35rem;
+}
+
+.product-card .price {
+    font-weight: 600;
+    color: #2d5b31;
+}
+
+/* =========================
+   Table / Database view
+   ========================= */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 0.75rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background-color: #fafafa;
+}
+
+thead {
+    background-color: #e1e8dd;
+}
+
+th,
+td {
+    padding: 0.45rem 0.6rem;
+    border-bottom: 1px solid #d9ddcf;
+    text-align: left;
+}
+
+th.right,
+td.right {
+    text-align: right;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f6ef;
+}
+
+/* =========================
+   Product Form
+   ========================= */
+.product-form {
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem 1.25rem;
+    align-items: end;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 0.3rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid #c7cfc2;
+    font-size: 0.95rem;
+}
+
+input:focus {
+    outline: 2px solid #386a3b;
+    outline-offset: 1px;
+}
+
+.form-note {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+    background-color: #f0e1c9;
+    padding: 1rem 1.5rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddc8a5;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+    }
+
+    #slideshow {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+
+    .content {
+        padding: 1.5rem 1.25rem 2rem;
+    }
+}
