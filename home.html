@@ -1,86 +1,104 @@
-<!--Kathryn Valdes Home Page -->
+<!-- EarthBar Home Page -->
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>EarthBar</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
-</head>
+    <meta charset="UTF-8">
+    <title>EarthBar | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
 <body>
+    <!-- ============= HEADER ============= -->
     <header>
         <div class="logo-area">
-        <img src="images/logo.png" alt="EarthBar Logo" class="logo-img">
-        <span class="brand-name">EARTHBAR</span>
+            <!-- Top-left logo -->
+            <img src="logo.png" alt="EarthBar Logo" class="logo-img">
+            <span class="brand-name">EARTHBAR</span>
         </div>
 
-        <!--Navigation Menu-->
-        <nav id="menu">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="hours.html">Hours</a></li>
-            </ul>
+        <nav class="main-nav">
+            <a href="home.html" class="nav-link active">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="hours.html" class="nav-link">Hours</a>
         </nav>
-        <img id="slideshow" alt="Picture Slideshow" src="images/logo.png" width="250">
     </header>
 
-    <!--Home Page Content-->
-    <main>
-    <section class="content">
-        <h1>Welcome to EarthBar! Your one-stop shop for eco-friendly products!</h1>
-        <p class="mission">At EarthBar, we are committed to providing sustainable and 
-            environmentally friendly products that help you reduce your carbon footprint. 
-            We believe that clean skin should come from clean ingredients. Our soaps are 
-            handcrafted in small batches using plant oils, mineral clays, and wild botanical 
-            extracts—no sulfates, parabens, or artificial dyes. Just pure, earth-made cleansing. 
-            Explore our wide range of eco-conscious items designed to make a positive impact on the planet.</p>
-
-        <p>Our collection features rich bar soaps and velvety liquid washes in
-            four signature scents:
-            <strong>Amber Canyon</strong> (vanilla • spice • sandalwood),
-            <strong>Midnight Grove</strong> (lavender • fig • oakmoss),
-            <strong>Rainforest Mist</strong> (eucalyptus • mint • fern),
-            and our newest bright and juicy blend, and our new scent
-            <strong>Solar Citrus</strong> (orange • bergamot • grapefruit).</p>
-
-        <div class="promo-grid">
-            <article class="promo-card">
-                <img src="images/Collection.png" alt="Holiday collection promotion">
-                <h2>Holiday Collection – $34.99</h2>
-                <p>
-                    Gift-ready trio of our bestselling bottles with a coordinating
-                    EarthBar tote. Limited-time seasonal packaging while supplies last.
-                </p>
-            </article>
-
-            <article class="promo-card">
-                <img src="images/SolarCitrus.png" alt="Solar Citrus pack">
-                <h2>New! Solar Citrus Pack – $19.99</h2>
-                <p>
-                    A sunlit duo featuring Solar Citrus bar and bottle for a
-                    bright, citrus-infused routine at a special introductory price.
-                </p>
-            </article>
-
-            <article class="promo-card">
-                <img src="images/totebag.png" alt="EarthBar tote bag">
-                <h2>Free Tote with Purchase</h2>
-                <p>
-                    During the holidays, get our reusable EarthBar tote <strong>free</strong>
-                    when you purchase any holiday collection set in store.
-                </p>
-            </article>
+    <!-- HERO with slideshow image (promos only) -->
+    <section class="hero">
+        <div class="hero-image-wrapper">
+            <img
+                id="slideshow"
+                src="SCPromo.png"
+                alt="Introducing Solar Citrus"
+            >
         </div>
+
+       
     </section>
-</main>
 
-    <!--Footer-->
-<footer>
-    <p id="copyrightmessage">&copy; <span id="year"></span> EarthBar Natural Soap. All rights reserved.</p>
-    <p id="copyrightmessage">EarthBar Studio • 123 Amber Canyon Way • Tallahassee, FL 32301 • (850) 555-0134</p>
-</footer>
+    <!-- ============= MAIN CONTENT ============= -->
+    <main>
+        <section class="content">
+            <h1>Welcome to EarthBar! Your one-stop shop for eco-friendly products!</h1>
+
+            <p class="mission">
+                At EarthBar, we are committed to providing sustainable and environmentally friendly
+                products that help you reduce your carbon footprint. We believe that clean skin
+                should come from clean ingredients. Our soaps are handcrafted in small batches
+                using plant oils, mineral clays, and wild botanical extracts—no sulfates, parabens,
+                or artificial dyes. Just pure, earth-made cleansing. Explore our wide range of
+                eco-conscious items designed to make a positive impact on the planet.
+            </p>
+
+            <p>
+                Our collection features rich bar soaps and velvety liquid washes in four signature scents:
+                <strong>Amber Canyon</strong> (vanilla • spice • sandalwood),
+                <strong>Midnight Grove</strong> (lavender • fig • oakmoss),
+                <strong>Rainforest Mist</strong> (eucalyptus • mint • fern),
+                and our newest bright and juicy blend,
+                <strong>Solar Citrus</strong> (orange • bergamot • grapefruit).
+            </p>
+
+            <div class="promo-grid">
+                <!-- New scent promo (left) -->
+                <article class="promo-card">
+                    <img src="SCPromo.png" alt="Solar Citrus promotion">
+                    <h2>New! Solar Citrus Pack – $19.99</h2>
+                    <p>
+                        A sunlit duo featuring Solar Citrus bar and bottle for a bright,
+                        citrus-infused routine at a special introductory price.
+                    </p>
+                </article>
+
+                <!-- Holiday bundle (middle) -->
+                <article class="promo-card">
+                    <img src="Collection.png" alt="Holiday collection promotion">
+                    <h2>Holiday Collection – $34.99</h2>
+                    <p>
+                        Gift-ready trio of our bestselling bottles with a coordinating
+                        EarthBar tote. Limited-time seasonal packaging while supplies last.
+                    </p>
+                </article>
+
+                <!-- Tote bag (right) -->
+                <article class="promo-card">
+                    <img src="totebag.png" alt="EarthBar tote bag">
+                    <h2>Free Tote with Purchase</h2>
+                    <p>
+                        During the holidays, get our reusable EarthBar tote <strong>free</strong>
+                        when you purchase any holiday collection set in store.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============= FOOTER ============= -->
+    <footer>
+        <p>&copy; <span id="year"></span> EarthBar Natural Soap. All rights reserved.</p>
+        <p>EarthBar Studio • 123 Amber Canyon Way • Tallahassee, FL 32301 • (850) 555-0134</p>
+    </footer>
 </body>
-
 </html>
