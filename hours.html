@@ -1,61 +1,95 @@
+<!-- EarthBar Hours Page -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Earth Bar Hours Page</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>EarthBar | Hours & Location</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
-
 <body>
-    <header id="HourSite-head">
-        <div id="HourStoreName">
-            <h1>EARTHBAR Hours</h1>
+    <!-- ============= HEADER ============= -->
+    <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="EarthBar Logo" class="logo-img">
+            <span class="brand-name">EARTHBAR</span>
         </div>
 
-        <nav id="menu">
-            <ul>
-                <li><a href ="home.html">Home</a></li>
-                <li><a href ="products.html">Products</a></li>
-                <li><a href ="hours.html">Hours</a></li>
-            </ul>
+        <nav class="main-nav">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="hours.html" class="nav-link active">Hours</a>
         </nav>
-        <img id="slideshow" alt="Picture Slideshow" src="images/logo.png" width="150">
     </header>
 
- <div class="container">
-        <h2>Welcome to EarthBar! Your one-stop shop for eco-friendly products!</h2>
-        <p>Located here are EarhtBar's hours for in-store, pick-up, and customer service.</p>
-
-        <section id="hours_section">
-            <h3>The Store and Customer Service Hourss</h3>
-            <ul>
-                <li>Monday - Friday: 10:00am - 6:00pm</li>
-                <li>Satrurday: 12:00pm - 5:00pm</li>
-                <li>Sunday: Closed</li>
-            </ul>
-
-            <p id="store-open-status" class="status-message"></p>
-            <p id="store-today-hours" class="hours-message"></p>
-
-            <h3>The Stores Pick-Up Hours</h3>
-            <ul>
-                <li>Monday - Friday: 11:00am - 5:00pm</li>
-                <li>Saturday: 1:00pm - 4:00pm</li>
-                <li>Sunday: Closed</li>
-            </ul>
-
-            <p id="pickup-open-status" class="status-message"></p>
-            <p id="pickup-today-hours" class="hours-message"></p>
-        </section>
-    </div>
-
-    <footer>
-            <div id="copyright">
-            <p>Copyright&copy;2025</p>
+    <!-- Simple hero (static image reusing collection) -->
+    <section class="hero">
+        <div class="hero-image-wrapper">
+            <img
+                id="hero-image"
+                src="Collection.png"
+                alt="EarthBar storefront and holiday display"
+                data-page="hours"
+            >
         </div>
-        </footer>
- </body>
 
+    <!-- ============= MAIN CONTENT ============= -->
+    <main>
+        <section class="content">
+            <h1>Store Hours & Location</h1>
+
+            <!-- This text is filled by updateOpenStatus() in scripts.js -->
+            <p id="open-status" class="lead"></p>
+
+            <p>
+                Visit EarthBar in person to experience our scents, talk with our team,
+                and refill your favorites. We’re located just off campus in Tallahassee.
+            </p>
+
+            <h2>Regular Hours</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>10:00 AM – 6:00 PM</td></tr>
+                        <tr><td>Tuesday</td><td>10:00 AM – 6:00 PM</td></tr>
+                        <tr><td>Wednesday</td><td>10:00 AM – 6:00 PM</td></tr>
+                        <tr><td>Thursday</td><td>10:00 AM – 6:00 PM</td></tr>
+                        <tr><td>Friday</td><td>10:00 AM – 7:00 PM</td></tr>
+                        <tr><td>Saturday</td><td>11:00 AM – 5:00 PM</td></tr>
+                        <tr><td>Sunday</td><td>Closed</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Holiday & Special Hours</h2>
+            <p>
+                During major holidays and university breaks, our in-store hours may change.
+                Check our front window or call ahead to confirm extended evening or special
+                event hours for our Holiday Collection.
+            </p>
+
+            <h2>Location</h2>
+            <p>
+                <strong>EarthBar Studio</strong><br>
+                123 Amber Canyon Way<br>
+                Tallahassee, FL 32301<br>
+                Phone: (850) 555-0134
+            </p>
+        </section>
+    </main>
+
+    <!-- ============= FOOTER ============= -->
+    <footer>
+        <p>&copy; <span id="year"></span> EarthBar Natural Soap. All rights reserved.</p>
+        <p>EarthBar Studio • 123 Amber Canyon Way • Tallahassee, FL 32301 • (850) 555-0134</p>
+    </footer>
+</body>
 </html>
